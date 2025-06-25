@@ -160,9 +160,26 @@ class SchiacciateAnimation {
     }
 }
 
-// Start the appropriate animation based on the current page
+// Test image loading
+function testImageLoading() {
+    const meatballImg = new Image();
+    const schiacciateImg = new Image();
+    
+    meatballImg.onload = () => console.log('Meatball image loaded successfully');
+    meatballImg.onerror = () => console.error('Failed to load meatball image');
+    meatballImg.src = 'assets/meatball.png';
+    
+    schiacciateImg.onload = () => console.log('Schiacciate image loaded successfully');
+    schiacciateImg.onerror = () => console.error('Failed to load schiacciate image');
+    schiacciateImg.src = 'assets/schiacciate.png';
+}
+
+// Start animations based on available elements
 document.addEventListener('DOMContentLoaded', () => {
-    const currentPage = window.location.pathname;
+    console.log('DOM loaded, checking for animations...');
+    
+    // Test image loading first
+    testImageLoading();
     
     // Check if event-background element exists
     const eventBackground = document.querySelector('.event-background');
@@ -171,22 +188,54 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
     
-    if (currentPage.includes('meatballedi.html')) {
-        // Start meatball animation for meatballedi page
+    // Check page type by looking at the page title
+    const pageTitle = document.title;
+    console.log('Page title:', pageTitle);
+    
+    // Try to start meatball animation if we're on meatball page
+    if (pageTitle.includes('Meatballedí') || pageTitle.includes('Meatball')) {
+        console.log('Attempting to start meatball animation...');
         try {
             const meatballAnimation = new MeatballAnimation();
             meatballAnimation.start();
+            console.log('Meatball animation started successfully');
         } catch (error) {
-            console.log('Error starting meatball animation:', error);
+            console.error('Error starting meatball animation:', error);
         }
-    } else if (currentPage.includes('schiacciarte.html')) {
-        // Start schiacciate animation for schiacciarte page
+    }
+    
+    // Try to start schiacciate animation if we're on schiacciate page
+    if (pageTitle.includes('SchiacciArte') || pageTitle.includes('Schiacci')) {
+        console.log('Attempting to start schiacciate animation...');
         try {
             const schiacciateAnimation = new SchiacciateAnimation();
             schiacciateAnimation.start();
+            console.log('Schiacciate animation started successfully');
         } catch (error) {
-            console.log('Error starting schiacciate animation:', error);
+            console.error('Error starting schiacciate animation:', error);
         }
     }
-    // No animation for index.html or other pages
+    
+    // If no specific page detected, try both (for testing)
+    if (!pageTitle.includes('Meatballedí') && !pageTitle.includes('SchiacciArte')) {
+        console.log('No specific page detected, trying both animations...');
+        
+        // Try meatball animation
+        try {
+            const meatballAnimation = new MeatballAnimation();
+            meatballAnimation.start();
+            console.log('Meatball animation started (fallback)');
+        } catch (error) {
+            console.error('Error starting meatball animation (fallback):', error);
+        }
+        
+        // Try schiacciate animation
+        try {
+            const schiacciateAnimation = new SchiacciateAnimation();
+            schiacciateAnimation.start();
+            console.log('Schiacciate animation started (fallback)');
+        } catch (error) {
+            console.error('Error starting schiacciate animation (fallback):', error);
+        }
+    }
 }); 
