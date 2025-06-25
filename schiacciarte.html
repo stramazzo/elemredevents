@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchiacciArte – Giorno 1 - ElemR&D Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="event-styles.css">
+</head>
+<body class="event-page">
+    <div class="event-background"></div>
+    
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="ElemR&D Logo" class="logo">
+        </div>
+        <a href="index.html" class="back-link">← Torna agli Eventi</a>
+    </header>
+
+    <main class="event-content">
+        <h1>SchiacciArte – Giorno 1</h1>
+        <div class="event-details">
+            <p class="date">1 Luglio 2025</p>
+            <p class="description">
+                Tutti sono invitati a partecipare alla prima edizione di <strong>SchiacciArte</strong>, la giornata dedicata alla schiacciata farcita in tutte le sue forme!
+                <br><br>
+                📅 <strong>Quando?</strong><br> 
+                1 Luglio 2025, ore 12:30
+                <br><br>
+                📍 <strong>Dove?</strong><br> 
+                Nel pratone
+                <br><br>
+                🥪 <strong>Come funziona?</strong><br>
+                Ognuno porta uno o più ingredienti da condividere. La schiacciata sarà acquistata dagli organizzatori, che richiederanno un piccolo contributo economico a chi partecipa.
+                <br><br>
+                ❓ <strong>FAQ</strong>
+                <br><br>
+                ➡️ <strong>Come posso iscrivermi?</strong><br>
+                È <strong>necessaria la prenotazione</strong>. Usa il modulo di iscrizione qui sotto!
+                <br><br>
+                ➡️ <strong>Quanto costa?</strong><br>
+                Contributo 2€ per l'acquisto della schiacciata  (quello che avanza verrà messo da parte per l'evento successivo).
+                <br><br>
+                ➡️ <strong>Quanto cibo devo portare?</strong><br>
+                Esattamente quanto ne mangeresti… più una mezza porzione.
+                <br><br>
+                ➡️ <strong>È compreso il caffè?</strong><br>
+                Sì.
+                <br><br>
+                ➡️ <strong>Ci sono dei premi?</strong><br>
+                Il premio è il giudizio dei partecipanti: gloria eterna o disprezzo assoluto, in base alla qualità del cibo portato.
+                <br><br><br>
+                🎭 <strong>Fun Facts</strong>
+                <br><br>
+                📜 <strong>Poesia sulla schiacciata</strong><br>
+                Pane schiacciato, caldo e fragrante,<br>
+                Si apre come un libro, avvolgente.<br>
+                Dentro ogni ingrediente racconta<br>
+                Una storia di sapori che incanta.<br>
+                Dal salato al dolce, dal piccante al fresco,<br>
+                La schiacciata è un viaggio, un'esplorazione del gusto.
+                <br><br>
+                ⚔️ <strong>Un avvenimento storico</strong><br>
+                Nel 1500, a Firenze, la schiacciata era il cibo dei lavoratori che la riempivano con gli avanzi del giorno prima. Da allora, questo piatto semplice ma versatile ha conquistato il mondo, diventando simbolo di creatività culinaria e convivialità.
+                <br><br>
+                📖 <strong>Citazione da un libro</strong><br>
+                "La schiacciata è come una tela bianca per un artista. Ogni ingrediente è un colore, ogni combinazione un'opera d'arte. Non esistono regole, solo creatività e passione per il buon cibo."
+                — Adattato da 'L'arte della cucina toscana'
+            </p>
+        </div>
+
+        <!-- Form di iscrizione -->
+        <section class="registration-section">
+            <h2>Prenotati ora!</h2>
+            <div class="registration-info">
+                <p>Per iscriverti all'evento SchiacciArte, clicca sul pulsante qui sotto. Verrai reindirizzato al modulo di iscrizione ufficiale.</p>
+                <p><strong>I dati verranno salvati automaticamente e gli organizzatori riceveranno una notifica della tua iscrizione.</strong></p>
+            </div>
+            
+            <div class="google-form-link">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0z6A7fyzJBUA8NEahuUJm88xYtF_iZYlFQA8LNTu1cHnDfA/viewform?usp=sharing&ouid=103584848537398776048" target="_blank" class="google-form-button">
+                    📝 Iscriviti su Google Forms
+                </a>
+            </div>
+
+        </section>
+
+        <div class="inspiration-section">
+            <button id="inspirationButton" class="inspiration-button">Dammi un'ispirazione per ingredienti!</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ElemR&D Events. All rights reserved.</p>
+    </footer>
+
+    <script src="event-animation.js"></script>
+    <script src="schiacciate-recipes.js"></script>
+    <script>
+        document.getElementById('inspirationButton').addEventListener('click', function() {
+            const randomRecipe = schiacciateRecipes[Math.floor(Math.random() * schiacciateRecipes.length)];
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(randomRecipe + " ricetta")}`;
+            window.open(searchUrl, '_blank');
+        });
+    </script>
+</body>
+</html> 
