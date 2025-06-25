@@ -1,0 +1,264 @@
+.event-page {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #fff5f5;
+}
+
+.event-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.event-hero-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.back-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #c0392b;
+}
+
+.event-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.event-content h1 {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.event-details {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.event-details .date {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.event-details .description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.recipes-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.recipe-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-color: var(--secondary-color);
+}
+
+.recipe-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.recipe-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.inspiration-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+}
+
+.inspiration-button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inspiration-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    background-color: #c0392b;
+}
+
+.inspiration-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .event-content {
+        padding: 1rem;
+    }
+
+    .event-content h1 {
+        font-size: 2rem;
+    }
+
+    .recipe-links {
+        grid-template-columns: 1fr;
+    }
+
+    .inspiration-button {
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+    }
+}
+
+/* Stili per la sezione di registrazione */
+.registration-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+}
+
+.registration-section h2 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.registration-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registration-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.google-form-link {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.google-form-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+.google-form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    background-color: #c0392b;
+    color: white;
+}
+
+.google-form-button:active {
+    transform: translateY(0);
+}
+
+.form-fields-preview {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.form-fields-preview h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.form-fields-preview ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form-fields-preview li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+.form-fields-preview li strong {
+    color: var(--primary-color);
+}
+
+/* Responsive per la sezione di registrazione */
+@media (max-width: 768px) {
+    .registration-section {
+        padding: 1rem;
+    }
+    
+    .google-form-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .registration-info p {
+        font-size: 1rem;
+    }
+} 
